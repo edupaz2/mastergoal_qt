@@ -24,6 +24,9 @@ qt_add_qml_module(${TARGET}
     QML_FILES
         Main.qml
         src/app/App.qml
+        src/app/Logic.qml
+        src/home/Home.qml
+        src/sologame/SoloGame.qml
         src/splashscreen/SplashScreen.qml
 )
 
