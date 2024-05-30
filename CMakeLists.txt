@@ -11,12 +11,16 @@ qt_standard_project_setup(REQUIRES 6.5)
 
 include_directories(src)
 
-qt_add_resources(RES_RCC "res/res.qrc")
+qt_add_resources(IMAGES_RCC "res/images/images.qrc")
+qt_add_resources(FONTS_RCC "res/fonts/fonts.qrc")
 
 qt_add_executable(${TARGET}
     main.cpp
-    ${RES_RCC}
+    ${IMAGES_RCC}
+    ${FONTS_RCC}
 )
+
+set_source_files_properties(src/theme/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
 
 qt_add_qml_module(${TARGET}
     URI MastergoalQt
@@ -28,6 +32,7 @@ qt_add_qml_module(${TARGET}
         src/home/Home.qml
         src/sologame/SoloGame.qml
         src/splashscreen/SplashScreen.qml
+        src/theme/Theme.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

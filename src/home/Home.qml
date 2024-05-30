@@ -11,7 +11,9 @@ Page {
         anchors.fill: parent
 
         Button {
-            text: qsTr("New solo game")
+            Layout.alignment: Qt.AlignHCenter
+            text: qsTr("NEW SOLO GAME")
+            font.family: Theme.currentFont
             onClicked: {
                 logic.newSoloGame()
             }
